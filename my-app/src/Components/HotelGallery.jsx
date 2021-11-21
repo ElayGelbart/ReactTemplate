@@ -1,9 +1,16 @@
 import React from "react";
-import HotelJSON from "../HaifaHotels.json";
 import HotelCard from "./HotelCard";
+import HotelJSON from "../HaifaHotels.json";
 const hotelsJSXarray = [];
 for (let value of HotelJSON) {
-  hotelsJSXarray.push(<HotelCard HotelName={value.שם} key={value.שם} />);
+  hotelsJSXarray.push(
+    <HotelCard
+      HotelName={value.שם}
+      HotelAdress={value["שם רחוב"]}
+      HotelNumber={value.טלפון}
+      key={value.שם}
+    />
+  );
 }
 
 export default class HotelGallery extends React.Component {
