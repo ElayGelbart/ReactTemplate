@@ -1,11 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
-class HotelPage extends React.Component {
-  render() {
-    return (
-      <h1>Haifa Hotels Finder</h1>
-    )
-  }
-}
+import HotelGallery from "./Components/HotelGallery"
+import "./style.css"
 
-ReactDOM.render(<HotelPage />, document.getElementById("root"));
+ReactDOM.render(<HotelGallery />, document.getElementById("root"));

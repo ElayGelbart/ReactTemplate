@@ -1,0 +1,24 @@
+body {
+  text-align: center;
+  background-color: bisque;
+}
+.HotelCard {
+  background-color: brown;
+  margin: 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.HotelCard img {
+  margin: 10px;
+}
+#CardContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.HotelName {
+  background-color: blue;
+  width: 50%;
+  margin: 10px;
+}
