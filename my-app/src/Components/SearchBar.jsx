@@ -1,11 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import Option from "./Option";
 import ClearButton from "./ClearButton";
+import DropdownSVG from "../Images/DropDown.svg";
 // import Option from "./Option"
 export default function SearchBar() {
   const [CountriesArrayJSX, setCountries] = useState(null);
   const [originalCoutriesJsx, setOriginalCountry] = useState(null);
   const SearchInput = useRef(null);
+  const CountryList = useRef(null);
 
   useEffect(() => {
     async function getAPIcountries() {
@@ -46,6 +48,14 @@ export default function SearchBar() {
     FilterCountries();
   };
 
+  const changeListVisibility = (boolean) => {
+    if (boolean || CountryList.current.style.visibility === "hidden") {
+      CountryList.current.style.visibility = "visible";
+    } else {
+      CountryList.current.style.visibility = "hidden";
+    }
+  };
+
   return (
     <label
       style={{
@@ -61,9 +71,27 @@ export default function SearchBar() {
         placeholder="Select Country"
         onChange={() => {
           FilterCountries();
+          changeListVisibility(true);
         }}
       />
-      <ul>{CountriesArrayJSX}</ul>
+      <img
+        onClick={() => {
+          changeListVisibility();
+        }}
+        alt="dropdown"
+        src={DropdownSVG}
+        style={{
+          height: 15,
+          paddingTop: 2,
+          paddingRight: 2,
+          cursor: "pointer",
+          position: "absolute",
+          right: 0,
+        }}
+      />
+      <ul ref={CountryList} id="CountryList" style={{ visibility: "hidden" }}>
+        {CountriesArrayJSX}
+      </ul>
     </label>
   );
 }

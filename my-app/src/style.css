@@ -37,3 +37,6 @@ input[type="text"] {
   width: 50%;
   margin: 0;
 }
+#CountryList {
+  visibility: hidden;
+}

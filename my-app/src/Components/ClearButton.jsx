@@ -13,6 +13,7 @@ export default function ClearButton(props) {
         cursor: "pointer",
         position: "absolute",
         left: 0,
+        zIndex: 1,
       }}
       src={Xsvg}
       alt="X"
