@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Option from "./Option";
+import ClearButton from "./ClearButton";
 // import Option from "./Option"
 export default function SearchBar() {
   const [CountriesArrayJSX, setCountries] = useState(null);
@@ -40,8 +41,18 @@ export default function SearchBar() {
     setCountries(filterdCountryArray);
   };
 
+  const clearInput = () => {
+    SearchInput.current.value = "";
+    FilterCountries();
+  };
+
   return (
-    <label>
+    <label
+      style={{
+        position: "relative",
+      }}
+    >
+      <ClearButton clearFunc={clearInput} />
       <input
         ref={SearchInput}
         list="CountriesList"
