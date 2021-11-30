@@ -12,7 +12,6 @@ export default function App(props) {
     <div
       id="drum-machine"
       onKeyPress={(e) => {
-        console.log(e, "preesed");
       }}
     >
       <div id="display">{KeyTriggerd}</div>
